@@ -1,36 +1,84 @@
-# Boilerplate: Fullstack with Sass
+## AI-spy: An Interactive 20 Questions Game
 
-## Setup
+AI-spy is an interactive web application that puts a modern twist on the classic "I spy" and "20 Questions" games. Using Google's Gemini AI, the application creates an engaging experience where players can try to guess what the AI is thinking of within a specified topic.
 
-### What's included
+## Features
 
-This repo includes:
+- **Topic Selection**: Choose any topic for the AI to select an item from
+- **Difficulty Levels**: Select from easy, medium, or hard difficulty settings
+- **Interactive Gameplay**: Ask yes/no questions to narrow down your guesses
+- **Hint System**: Request up to 3 hints when you're stuck
+- **Game Statistics**: Track your performance with stats on questions asked, hints used, and win/loss records
+- **Game History**: Review your past games and performance
 
-* a single, simple API endpoint (`/api/v1/fruits`)
-* frontend routing via react-router
-* an auth0 setup waiting to be configured
-* an example database module (`server/db/fruits.js`)
-* an API client module (`client/apis/fruits.js`)
-* configuration for Vitest and testing library
-* configuration for server-side debugging in VS Code
-* configuration for preprocessing css with tailwind support
+## Tech Stack
+
+- **Frontend**: React with TypeScript, TailwindCSS
+- **Backend**: Express.js with TypeScript
+- **Authentication**: Auth0
+- **AI Integration**: Google Gemini API
+- **Database**: SQLite with Knex.js
+- **Testing**: Vitest and Testing Library
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+- Google Gemini API key
 
 ### Installation
 
-#### **From the Github UI**
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/AI-spy.git
+   cd AI-spy
+   ```
 
-See the instructions [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) to use Github's feature to create a new repo from a template.
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-#### **From the command line**
+3. Create a `.env` file in the root directory with your Google Gemini API key:
+   ```
+   GOOGLE_API_KEY=your_api_key_here
+   ```
 
-```
-git clone https://github.com/dev-academy-challenges/boilerplate-fullstack [your-project-name]
-cd [your-project-name]
-npm install # to install dependencies
-npm run dev # to start the dev server
-```
+4. Set up the database:
+   ```
+   npm run knex migrate:latest
+   npm run knex seed:run
+   ```
 
-You can find the server running on [http://localhost:3000](http://localhost:3000) and the client running on [http://localhost:5173](http://localhost:5173).
+5. Start the development server:
+   ```
+   npm run dev
+   ```
 
----
-[Provide feedback on this repo](https://docs.google.com/forms/d/e/1FAIpQLSfw4FGdWkLwMLlUaNQ8FtP2CTJdGDUv6Xoxrh19zIrJSkvT4Q/viewform?usp=pp_url&entry.1958421517=boilerplate-fullstack)
+6. Open your browser and navigate to:
+   - Frontend: [http://localhost:5173](http://localhost:5173)
+   - Backend API: [http://localhost:3000](http://localhost:3000)
+
+## How to Play
+
+1. **Start a New Game**:
+   - Choose a topic (e.g., "animals", "countries", "movies")
+   - Select a difficulty level
+   - Click "Start Game"
+
+2. **Ask Questions**:
+   - Type yes/no questions to narrow down what the AI is thinking of
+   - You have a maximum of 20 questions per game
+   - Use up to 3 hints if you get stuck
+
+3. **Make Your Guess**:
+   - When you think you know the answer, type it in
+   - If correct, you win!
+   - If you run out of questions or give up, the AI reveals the answer
+
+## Acknowledgments
+
+- Google Gemini API for powering the AI interactions
+- Dev Academy for the project foundation
