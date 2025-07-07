@@ -82,3 +82,4 @@ AI-spy is an interactive web application that puts a modern twist on the classic
 
 - Google Gemini API for powering the AI interactions
 - Dev Academy for the project foundation
+- This was a group project with 3 other devs. I was responsible for much of the UI game.tsx component, using state to remember user inputs, hints etc. Storing states into gamelogs on game over, and creating the database structure.
